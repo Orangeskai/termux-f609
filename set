@@ -1,0 +1,19 @@
+#!/bin/sh
+# THIS SCRIPT IS FOR AUTO INSTALL THE MODULE PLEASE USE TERMUX OR OTHER LINUX *Should be Work with apt thing in next update of this script
+# THANKS TO WALANGKAJI (https://github.com/walangkaji) for the library
+# Me for making it simple and android apk *hopefully done
+
+# update and upgrade the termux
+apt update && apt upgrade -y 
+
+# installing php git and nano
+apt install php git nano -y 
+
+# git pull the repo 
+git clone https://github.com/Orangeskai/termux-f609 /data/data/com.termux/files/usr/etc/f609-serv
+
+# Opening the config
+nano /data/data/com.termux/files/usr/etc/f609-serv/config.php
+
+# run the script
+php -S localhost:8809 -t /data/data/com.termux/files/usr/etc/f609-serv/Script
