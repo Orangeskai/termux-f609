@@ -4,10 +4,67 @@
 # Me for making it simple and android apk *hopefully done
 
 # update and upgrade the termux
-apt update && apt upgrade -y 
+apt update && apt upgrade -y
 
 # installing php git and nano
 apt install php git nano -y 
 
 # git pull the repo 
 git clone https://github.com/Orangeskai/termux-f609 /data/data/com.termux/files/usr/etc/f609-serv
+
+# make the bin script !!!! REQUIRED
+touch /data/data/com.termux/files/usr/bin/f609
+chmod +x /data/data/com.termux/files/usr/
+tee -a a <<EOF
+#!/bin/sh
+# Help section
+Help()
+{
+   # Display Help
+   echo "Hi this is my the script maybe will help but idk this is still beta and im busy to fix it :)."
+   echo 
+   echo "For started the api server just type f609 and it automaticly started"
+   echo 
+   echo "Syntax: available [--help|--stop|--uninstall]"
+   echo "options:"
+   echo "--help          Print this Help."
+   echo "--stop          Stop the api server idk what the correct name but lets call it api."
+   echo "--uninstall     Delete all of this script from your system. <beta>"
+   echo
+}
+
+# Uninstall section
+Uninstall()
+{
+  echo "this feature is still in deployment !!!"
+}
+
+# Stop section
+Stop()
+{
+  echo "this feature is still in deployment !!!"
+}
+
+# Get the options
+while [ "$1" != "" ]; do
+    case $1 in
+        --help )         Help
+                         exit;;
+        --stop )    	 Stop
+			 exit;;
+        --uninstall )    Uninstall
+                         exit;;
+	-* | --*)	 Help
+			 exit 1
+    esac
+    shift
+done
+
+
+EOF
+
+# tell to edit the config
+printf "Please EDIT the config file\n"
+printf "just type f609 --config :)\n"
+
+printf "Type f609 --help for more info\n"
