@@ -14,7 +14,7 @@ git clone https://github.com/Orangeskai/termux-f609 /data/data/com.termux/files/
 
 # make the bin script !!!! REQUIRED
 touch /data/data/com.termux/files/usr/bin/f609
-chmod +x /data/data/com.termux/files/usr/
+chmod +x /data/data/com.termux/files/bin/f609
 tee -a a <<EOF
 #!/bin/sh
 # Help section
