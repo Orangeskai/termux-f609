@@ -10,7 +10,7 @@ apt update && apt upgrade -y
 apt install php git nano -y 
 
 # git pull the repo 
-git clone https://github.com/Orangeskai/termux-f609 /data/data/com.termux/files/usr/etc/f609-serv
+git clone https://github.com/Orangeskai/termux-f609 /data/data/com.termux/files/usr/etc/f609-serv --depth=1 > /dev/null
 
 # make the bin script !!!! REQUIRED
 touch /data/data/com.termux/files/usr/bin/f609
@@ -46,8 +46,8 @@ Stop()
 }
 
 # Get the options
-while [ "$1" != "" ]; do
-    case $1 in
+while [ "\$1" != "" ]; do
+    case \$1 in
         --help )         Help
                          exit;;
         --stop )    	 Stop
