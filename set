@@ -4,13 +4,20 @@
 # Me for making it simple and android apk *hopefully done
 
 # update and upgrade the termux
+echo "Run apt update & upgrade"
 apt update && apt upgrade -y
 
 # installing php git and nano
+echo "Installing the requirements"
 apt install php git nano -y 
 
 # git pull the repo 
-git clone https://github.com/Orangeskai/termux-f609 /data/data/com.termux/files/usr/etc/f609-serv --depth=1 > /dev/null
+echo "Clone the repo"
+git clone https://github.com/Orangeskai/termux-f609 /data/data/com.termux/files/usr/etc/f609-serv --depth=1 --quiet
+
+# give time for you debugging and make cleaner
+echo "Waiting 10 second for debug"
+sleep 10 && clear
 
 # make the bin script !!!! REQUIRED
 touch /data/data/com.termux/files/usr/bin/f609
