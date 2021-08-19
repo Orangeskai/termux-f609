@@ -7,6 +7,9 @@ Basically this script will run the php script for restarting your router with ap
 Right now only Indonesia only and
 **Translation maybe kinda late**
 
+### 📱Apps
+**Coming soon :)**
+
 ### ✍️ Install the api server
 ```script
 bash <(curl https://raw.githubusercontent.com/Orangeskai/termux-f609/main/set)
