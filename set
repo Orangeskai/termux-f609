@@ -31,10 +31,12 @@ Help()
    echo "Hi this is my the script maybe will help but idk this is still beta and im busy to fix it :)."
    echo 
    echo "For started the api server just type f609 and it automaticly started"
+   echo "THIS SCRIPT MADE BY <3 by Orangeskai"
    echo 
    echo "Syntax: available [--help|--stop|--uninstall]"
    echo "options:"
    echo "--help          Print this Help."
+   echo "--config	 open text editor and change your config like ip, user etc."
    echo "--stop          Stop the api server idk what the correct name but lets call it api."
    echo "--uninstall     Delete all of this script from your system. <beta>"
    echo
@@ -44,6 +46,14 @@ Help()
 Uninstall()
 {
   echo "this feature is still in deployment !!!"
+}
+
+# Config section
+Config()
+{
+  echo "Ok please edit with your configuration !!!"
+  sleep 5
+  
 }
 
 # Stop section
@@ -57,6 +67,8 @@ while [ "\$1" != "" ]; do
     case \$1 in
         --help )         Help
                          exit;;
+	--config )	 Config
+			 exit;;
         --stop )    	 Stop
 			 exit;;
         --uninstall )    Uninstall
@@ -67,11 +79,14 @@ while [ "\$1" != "" ]; do
     shift
 done
 
+# Main script !!!!
+
 
 EOF
 
 # tell to edit the config
 printf "Please EDIT the config file\n"
 printf "just type f609 --config :)\n"
-
+echo
 printf "Type f609 --help for more info\n"
+echo
