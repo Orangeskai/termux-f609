@@ -80,7 +80,7 @@ while [ "\$1" != "" ]; do
 done
 
 # Main script !!!!
-
+php -S localhost:8809 -t /data/data/com.termux/files/usr/etc/f609-serv/Script
 
 EOF
 
