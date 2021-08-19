@@ -1,4 +1,4 @@
-# termux-f609
+# API SERVER ZTE f609
 ## 🤔 Concept
 **This repo need to installed in your termux system**<br />
 Basically this script will run the php script for restarting your router with app<br />
@@ -46,5 +46,5 @@ Yes you can just type in your browser or click this **But dont forget to change 
 - **http://localhost:8809/res.php for restart the modem**.
 
 ### 🙏 Thanks for :
-- Library from [Walangkaji](https://github.com/walangkaji)
+- Library from [Walangkaji](https://github.com/walangkaji), [Paypal](https://www.paypal.me/walangkaji)
 - Terminal env from [Termux](https://termux.com/)
