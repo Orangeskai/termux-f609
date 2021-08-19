@@ -24,6 +24,7 @@ touch /data/data/com.termux/files/usr/bin/f609
 chmod +x /data/data/com.termux/files/usr/bin/f609
 tee -a /data/data/com.termux/files/usr/bin/f609 <<EOF > /dev/null
 #!/bin/sh
+
 # Help section
 Help()
 {
@@ -38,6 +39,7 @@ Help()
    echo "--help          Print this Help."
    echo "--config	 open text editor and change your config like ip, user etc."
    echo "--uninstall     Delete all of this script from your system. <beta>"
+   echo "--remove	 Delete all the script but leave php still installed"
    echo
 }
 
@@ -53,6 +55,21 @@ Uninstall()
   echo
   sleep 10
   apt purge php -y
+  rm -rf /data/data/com.termux/files/usr/etc/f609-serv
+  rm -rf /data/data/com.termux/files/usr/bin/f609
+}
+
+# Uninstall section
+Remove()
+{
+  echo "This feature is still BETA"
+  echo "Waiting 10 seconds"
+  echo "This will deleting script and this command"
+  echo "Php not going to UNINSTALL"
+  echo 
+  echo "To cancel just pressed ctrl + c"
+  echo
+  sleep 10
   rm -rf /data/data/com.termux/files/usr/etc/f609-serv
   rm -rf /data/data/com.termux/files/usr/bin/f609
 }
@@ -74,6 +91,8 @@ while [ "\$1" != "" ]; do
 			 exit;;
         --uninstall )    Uninstall
                          exit;;
+	--remove )	 Remove
+			 exit;;
 	-* | --*)	 Help
 			 exit 1
     esac
@@ -81,7 +100,7 @@ while [ "\$1" != "" ]; do
 done
 
 # Main script !!!!
-echo"For stopping the server just press ctrl + c"
+echo "For stopping the server just press ctrl + c"
 php -S localhost:8809 -t /data/data/com.termux/files/usr/etc/f609-serv/Script
 
 EOF
