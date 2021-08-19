@@ -37,7 +37,6 @@ Help()
    echo "options:"
    echo "--help          Print this Help."
    echo "--config	 open text editor and change your config like ip, user etc."
-   echo "--stop          Stop the api server idk what the correct name but lets call it api."
    echo "--uninstall     Delete all of this script from your system. <beta>"
    echo
 }
@@ -45,7 +44,17 @@ Help()
 # Uninstall section
 Uninstall()
 {
-  echo "this feature is still in deployment !!!"
+  echo "This feature is still BETA"
+  echo "Waiting 10 seconds"
+  echo "This will deleting php + script and this command"
+  echo "if you need php maybe next update i will update it"
+  echo 
+  echo "To cancel just pressed ctrl + c"
+  echo
+  sleep 10
+  apt purge php -y
+  rm -rf /data/data/com.termux/files/usr/etc/f609-serv
+  rm -rf /data/data/com.termux/files/usr/bin/f609
 }
 
 # Config section
@@ -56,20 +65,12 @@ Config()
   nano /data/data/com.termux/files/usr/etc/f609-serv/config.php
 }
 
-# Stop section
-Stop()
-{
-  echo "this feature is still in deployment !!!"
-}
-
 # Get the options
 while [ "\$1" != "" ]; do
     case \$1 in
         --help )         Help
                          exit;;
 	--config )	 Config
-			 exit;;
-        --stop )    	 Stop
 			 exit;;
         --uninstall )    Uninstall
                          exit;;
@@ -80,6 +81,7 @@ while [ "\$1" != "" ]; do
 done
 
 # Main script !!!!
+echo"For stopping the server just press ctrl + c"
 php -S localhost:8809 -t /data/data/com.termux/files/usr/etc/f609-serv/Script
 
 EOF
