@@ -38,18 +38,17 @@ Help()
    echo "options:"
    echo "--help          Print this Help."
    echo "--config	 open text editor and change your config like ip, user etc."
-   echo "--uninstall     Delete all of this script from your system. <beta>"
-   echo "--remove	 Delete all the script but leave php still installed"
+   echo "--uninstall     Delete all of this script from your system."
+   echo "--remove	 Delete all the script but leave php still installed."
    echo
 }
 
 # Uninstall section
 Uninstall()
 {
-  echo "This feature is still BETA"
-  echo "Waiting 10 seconds"
+  echo "Are you sure ?"
   echo "This will deleting php + script and this command"
-  echo "if you need php maybe next update i will update it"
+  echo "Waiting 10 seconds"
   echo 
   echo "To cancel just pressed ctrl + c"
   echo
@@ -57,21 +56,23 @@ Uninstall()
   apt purge php -y
   rm -rf /data/data/com.termux/files/usr/etc/f609-serv
   rm -rf /data/data/com.termux/files/usr/bin/f609
+  hash -r
 }
 
 # Uninstall section
 Remove()
 {
-  echo "This feature is still BETA"
-  echo "Waiting 10 seconds"
+  echo "Are you sure ?"
   echo "This will deleting script and this command"
   echo "Php not going to UNINSTALL"
+  echo "Waiting 10 seconds"
   echo 
   echo "To cancel just pressed ctrl + c"
   echo
   sleep 10
   rm -rf /data/data/com.termux/files/usr/etc/f609-serv
   rm -rf /data/data/com.termux/files/usr/bin/f609
+  hash -r
 }
 
 # Config section
